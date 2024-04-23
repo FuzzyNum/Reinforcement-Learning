@@ -37,7 +37,7 @@ class BlackJackAgent:
     def get_action(self,obs:tuple[int,int,bool])->int:
         #Returns the best action with probability of epsilon, accounting for Explore-Exploit.
         if np.random.random()<self.epsilon:
-            return env.action_space.sample()
+            return self.env.action_space.sample()
         else:
             return int(np.argmax(self.q_values[obs]))
     
